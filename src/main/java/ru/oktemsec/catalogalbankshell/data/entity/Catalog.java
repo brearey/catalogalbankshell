@@ -15,8 +15,18 @@ public class Catalog {
         categories = new ArrayList<>();
     }
 
-    public void addCategory(Category category) {
-        this.categories.add(category);
+    public Result addCategory(Category category) {
+        Result result = new Result();
+
+        try {
+            this.categories.add(category);
+            result.isSuccess = true;
+            result.message = "Категория " + category.getName() + " успешно добавлена";
+        } catch (Exception e) {
+            result.isSuccess = false;
+            result.message = e.getMessage();
+        }
+        return result;
     }
 
     public void deleteCategory(int categoryId) {
@@ -24,6 +34,6 @@ public class Catalog {
     }
 
     public ArrayList<Category> getCategories() {
-        return categories;
+        return this.categories;
     }
 }
