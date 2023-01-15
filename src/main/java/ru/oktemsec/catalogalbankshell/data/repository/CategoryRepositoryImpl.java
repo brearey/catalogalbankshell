@@ -31,6 +31,6 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
 
     @Override
     public Result renameCategoryById(int categoryId, String name) {
-        return null;
+        return catalog.renameCategory(categoryId, name);
     }
 }

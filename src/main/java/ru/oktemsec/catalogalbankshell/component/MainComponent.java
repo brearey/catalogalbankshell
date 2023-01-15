@@ -30,4 +30,9 @@ public class MainComponent {
         mainService.deleteCategory(id);
     }
 
+    @ShellMethod(key = "rename_category", value = "Переименовать категорию по его ID [rename_category 1 мониторы]")
+    public void rename_category(@ShellOption(arity = 1) int id, @ShellOption(arity = 1) String name) {
+        mainService.renameCategory(id, name);
+    }
+
 }

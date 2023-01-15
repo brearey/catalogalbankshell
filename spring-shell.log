@@ -59,3 +59,12 @@
 1673772341536:delete_category 3
 1673772347460:get_catalog
 1673772353006:quit
+1673773934834:get_catalog
+1673773934911:add_category comps
+1673773934921:add_category monics
+1673773935597:add_category mouses
+1673773955621:get_catalog
+1673773978658:help
+1673774028817:rename_category 0 monitors
+1673774054946:rename_category 2 monitors
+1673774060943:get_catalog

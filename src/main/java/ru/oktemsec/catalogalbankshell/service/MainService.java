@@ -43,4 +43,14 @@ public class MainService {
             System.err.println(result.message);
         }
     }
+
+    public void renameCategory(int id, String name)
+    {
+        Result result = categoryRepository.renameCategoryById(id, name);
+        if (result.isSuccess) {
+            System.out.println(result.message);
+        } else {
+            System.err.println(result.message);
+        }
+    }
 }
