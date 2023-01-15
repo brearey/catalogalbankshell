@@ -46,4 +46,9 @@ public class MainComponent {
     ) {
         mainService.addPosition(categoryId, positionName, positionUnit, positionPrice, positionCount);
     }
+
+    @ShellMethod(key = "get_category", value = "Получить список позиций в категории с ID {get_category 1}")
+    public void get_category(@ShellOption(arity = 1) int categoryId) {
+        mainService.getCategory(categoryId);
+    }
 }

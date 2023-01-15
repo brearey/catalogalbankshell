@@ -1,20 +1,27 @@
 package ru.oktemsec.catalogalbankshell.data.entity;
 
 public class Position {
-    private int id;
+    static int instanceCount;
+    private final int id;
     private String name;
     private float price;
     private int count;
-    private String unit; //единица измерения
+    private final String unit; //единица измерения
+
+    public static final String currency = "руб/ед.";
+
+    static {
+        instanceCount = 0;
+    }
 
     //Constructor
-
-
     public Position(String name, float price, int count, String unit) {
+        instanceCount++;
+        id = instanceCount;
         this.name = name;
         this.price = price;
-        this.count = count;
         this.unit = unit;
+        this.count = count;
     }
 
     //Getters and setters

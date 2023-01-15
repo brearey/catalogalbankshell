@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Category {
     static int count;
 
-    private int id;
+    private final int id;
     private String name;
     private final ArrayList<Position> positions;
 
@@ -25,7 +25,17 @@ public class Category {
     }
 
     public Result addPosition(Position position) {
-        positions.add(position);
+        Result result = new Result();
+
+        try {
+            this.positions.add(position);
+            result.isSuccess = true;
+            result.message = "Позиция " + position.getName() + " успешно добавлена";
+        } catch (Exception e) {
+            result.isSuccess = false;
+            result.message = e.getMessage();
+        }
+        return result;
     }
 
     public ArrayList<Position> getPositions() {

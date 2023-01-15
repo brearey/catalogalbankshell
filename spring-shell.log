@@ -68,3 +68,77 @@
 1673774028817:rename_category 0 monitors
 1673774054946:rename_category 2 monitors
 1673774060943:get_catalog
+1673781162991:help
+1673781184222:get_catalog
+1673781184247:add_category comps
+1673781184260:add_category monics
+1673781184264:add_category mouses
+1673781184266:get_catalog
+1673781290614:add_position 2 dell шт. 8000 5
+1673781359257:add_position 2 acer шт. 6000 4
+1673781359261:add_position 2 lg шт. 7000 3
+1673781360058:add_position 2 sony шт. 9000 0
+1673783404010:add_category comps
+1673783404112:add_category monics
+1673783404112:add_category mouses
+1673783404112:add_position 2 dell шт. 8000 5
+1673783404122:add_position 2 acer шт. 6000 4
+1673783404122:add_position 2 lg шт. 7000 3
+1673783404122:add_position 2 sony шт. 9000 0
+1673783404132:get_catalog
+1673783421030:add_category comps
+1673783421200:add_category monics
+1673783421202:add_category mouses
+1673783421206:add_position 2 dell шт. 8000 5
+1673783421212:add_position 2 acer шт. 6000 4
+1673783421215:add_position 2 lg шт. 7000 3
+1673783421218:add_position 2 sony шт. 9000 0
+1673783421221:get_catalog
+1673783428717:help
+1673783433161:get_catalog
+1673783511745:add_category comps
+1673783511922:add_category monics
+1673783511924:add_category mouses
+1673783511929:add_position 2 dell шт. 8000 5
+1673783511936:add_position 2 acer шт. 6000 4
+1673783511940:add_position 2 lg шт. 7000 3
+1673783511943:add_position 2 sony шт. 9000 0
+1673783511945:get_catalog
+1673783525524:get_category 2
+1673783542108:get_category 1
+1673783802237:add_category comps
+1673783802326:add_category monics
+1673783802331:add_category mouses
+1673783802337:add_position 2 dell шт. 8000 5
+1673783802343:add_position 2 acer шт. 6000 4
+1673783802346:add_position 2 lg шт. 7000 3
+1673783802349:add_position 2 sony шт. 9000 0
+1673783802351:get_catalog
+1673783818034:get_category 2
+1673784270953:add_category comps
+1673784271048:add_category monics
+1673784271051:add_category mouses
+1673784271055:add_position 2 dell шт. 8000 5
+1673784271062:add_position 2 acer шт. 6000 4
+1673784271065:add_position 2 lg шт. 7000 3
+1673784271068:add_position 2 sony шт. 9000 0
+1673784271071:get_catalog
+1673784285233:get_category 2
+1673784343836:add_category comps
+1673784343934:add_category monics
+1673784343936:add_category mouses
+1673784343940:add_position 2 dell шт. 8000 5
+1673784343947:add_position 2 acer шт. 6000 4
+1673784343950:add_position 2 lg шт. 7000 3
+1673784343954:add_position 2 sony шт. 9000 0
+1673784343956:get_catalog
+1673784349852:get_category 2
+1673784595863:add_category comps
+1673784595919:add_category monics
+1673784595923:add_category mouses
+1673784595930:add_position 2 dell шт. 8000 5
+1673784595937:add_position 2 acer шт. 6000 4
+1673784595941:add_position 2 lg шт. 7000 3
+1673784595944:add_position 2 sony шт. 9000 0
+1673784595948:get_catalog
+1673784602620:get_category 2

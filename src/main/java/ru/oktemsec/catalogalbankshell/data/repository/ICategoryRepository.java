@@ -21,4 +21,6 @@ public interface ICategoryRepository {
             float positionPrice,
             int positionCount
     );
+
+    Category getCategory(int categoryId);
 }

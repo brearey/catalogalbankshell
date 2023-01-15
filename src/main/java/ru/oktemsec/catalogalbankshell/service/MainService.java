@@ -3,6 +3,7 @@ package ru.oktemsec.catalogalbankshell.service;
 import org.springframework.stereotype.Service;
 import ru.oktemsec.catalogalbankshell.data.entity.Catalog;
 import ru.oktemsec.catalogalbankshell.data.entity.Category;
+import ru.oktemsec.catalogalbankshell.data.entity.Position;
 import ru.oktemsec.catalogalbankshell.data.entity.Result;
 import ru.oktemsec.catalogalbankshell.data.repository.CategoryRepositoryImpl;
 
@@ -63,10 +64,38 @@ public class MainService {
     )
     {
         Result result = categoryRepository.addPositionToCategory(categoryId, positionName, positionUnit, positionPrice, positionCount);
+        printResult(result);
+    }
+
+    public void getCategory(int categoryId) {
+        Result result = new Result();
+        Category category = categoryRepository.getCategory(categoryId);
+        if (category == null) {
+            result.isSuccess = false;
+            result.message = "Категория " + categoryId + " не найдена";
+            printResult(result);
+        } else if (category.getPositions().size() == 0) {
+            System.out.println("Категория пуста");
+        } else {
+            printPositions(category.getPositions());
+        }
+    }
+
+    private void printResult(Result result) {
         if (result.isSuccess) {
             System.out.println(result.message);
         } else {
             System.err.println(result.message);
         }
+    }
+
+    private void printPositions(ArrayList<Position> positions) {
+        System.out.println("--------------------------------------------------------");
+        System.out.println("id\tнаименование\tколичество\tед.изм.\tстоимость");
+        System.out.println("--------------------------------------------------------");
+        for (Position pos : positions) {
+            System.out.println(pos.getId() + "\t" + pos.getName() + "\t" + pos.getCount() + " " + pos.getUnit() + "\t" + String.format("%.2f", pos.getPrice()) + " " + Position.currency);
+        }
+        System.out.println("--------------------------------------------------------");
     }
 }

@@ -43,6 +43,18 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
                 positionCount,
                 positionUnit
         );
-        return catalog.findCategoryById(categoryId).addPosition(position);
+        Category cat = catalog.findCategoryById(categoryId);
+        Result result = new Result();
+        if (cat == null) {
+            result.isSuccess = false;
+            result.message = "Категория " + categoryId + " не найдена";
+            return result;
+        }
+        return cat.addPosition(position);
+    }
+
+    @Override
+    public Category getCategory(int categoryId) {
+        return catalog.findCategoryById(categoryId);
     }
 }
