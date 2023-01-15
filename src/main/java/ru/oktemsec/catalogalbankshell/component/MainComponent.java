@@ -4,11 +4,8 @@ import jakarta.validation.constraints.Size;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
-import ru.oktemsec.catalogalbankshell.data.entity.Catalog;
-import ru.oktemsec.catalogalbankshell.data.repository.CategoryRepositoryImpl;
 import ru.oktemsec.catalogalbankshell.service.MainService;
 
-import java.util.logging.Logger;
 @ShellComponent
 public class MainComponent {
 
@@ -23,9 +20,14 @@ public class MainComponent {
         mainService.addCategory(name);
     }
 
-    @ShellMethod(key = "get_category", value = "Получить список категорий [get_category]")
-    public void get_category() {
-        mainService.getCategory();
+    @ShellMethod(key = "get_catalog", value = "Получить список категорий [get_catalog]")
+    public void get_catalog() {
+        mainService.getCatalog();
+    }
+
+    @ShellMethod(key = "delete_category", value = "Удалить категорию по его ID [delete_category 1]")
+    public void delete_category(@ShellOption(arity = 1) int id) {
+        mainService.deleteCategory(id);
     }
 
 }

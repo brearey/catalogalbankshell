@@ -29,11 +29,39 @@ public class Catalog {
         return result;
     }
 
-    public void deleteCategory(int categoryId) {
-        this.categories.remove(categoryId);
+    public Result deleteCategory(int categoryId) {
+        Result result = new Result();
+        Category deletedCategory = findCategoryById(categoryId);
+
+        if (deletedCategory == null) {
+            result.isSuccess = false;
+            result.message = "Категория с таким ID не найдена";
+            return result;
+        }
+
+        try {
+            int deleteId = deletedCategory.getId();
+            String deletedName = deletedCategory.getName();
+            this.categories.remove(deletedCategory);
+            result.isSuccess = true;
+            result.message = "Категория " + deleteId + " " + deletedName + " успешно удалена";
+        } catch (Exception e) {
+            result.isSuccess = false;
+            result.message = e.getMessage();
+        }
+        return result;
     }
 
     public ArrayList<Category> getCategories() {
         return this.categories;
+    }
+
+    private Category findCategoryById(int id) {
+        for (Category cat : categories) {
+            if (cat.getId() == id) {
+                return cat;
+            }
+        }
+        return null;
     }
 }

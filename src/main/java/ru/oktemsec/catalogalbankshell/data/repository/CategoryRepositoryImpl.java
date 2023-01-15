@@ -5,7 +5,6 @@ import ru.oktemsec.catalogalbankshell.data.entity.Category;
 import ru.oktemsec.catalogalbankshell.data.entity.Result;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CategoryRepositoryImpl implements ICategoryRepository {
 
@@ -27,7 +26,7 @@ public class CategoryRepositoryImpl implements ICategoryRepository {
 
     @Override
     public Result deleteCategoryById(int categoryId) {
-        return null;
+        return catalog.deleteCategory(categoryId);
     }
 
     @Override

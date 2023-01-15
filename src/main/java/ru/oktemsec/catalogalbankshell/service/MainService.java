@@ -23,7 +23,7 @@ public class MainService {
         }
     }
 
-    public void getCategory() {
+    public void getCatalog() {
         ArrayList<Category> categories = categoryRepository.getAllCategory();
         if (categories.size() == 0) {
             System.out.println("Каталог пуст");
@@ -31,6 +31,16 @@ public class MainService {
             for (Category cat : categories) {
                 System.out.println(cat.getId() + " " + cat.getName());
             }
+        }
+    }
+
+    public void deleteCategory(int id)
+    {
+        Result result = categoryRepository.deleteCategoryById(id);
+        if (result.isSuccess) {
+            System.out.println(result.message);
+        } else {
+            System.err.println(result.message);
         }
     }
 }
