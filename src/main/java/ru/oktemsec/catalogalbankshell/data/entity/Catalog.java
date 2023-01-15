@@ -78,7 +78,7 @@ public class Catalog {
         return this.categories;
     }
 
-    private Category findCategoryById(int id) {
+    public Category findCategoryById(int id) {
         for (Category cat : categories) {
             if (cat.getId() == id) {
                 return cat;

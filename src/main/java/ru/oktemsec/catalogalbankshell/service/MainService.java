@@ -53,4 +53,20 @@ public class MainService {
             System.err.println(result.message);
         }
     }
+
+    public void addPosition(
+            int categoryId,
+            String positionName,
+            String positionUnit,
+            float positionPrice,
+            int positionCount
+    )
+    {
+        Result result = categoryRepository.addPositionToCategory(categoryId, positionName, positionUnit, positionPrice, positionCount);
+        if (result.isSuccess) {
+            System.out.println(result.message);
+        } else {
+            System.err.println(result.message);
+        }
+    }
 }

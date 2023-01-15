@@ -24,7 +24,7 @@ public class Category {
         return id;
     }
 
-    public void addPosition(Position position) {
+    public Result addPosition(Position position) {
         positions.add(position);
     }
 

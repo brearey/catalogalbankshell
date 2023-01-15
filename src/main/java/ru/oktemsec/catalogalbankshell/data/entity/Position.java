@@ -5,6 +5,17 @@ public class Position {
     private String name;
     private float price;
     private int count;
+    private String unit; //единица измерения
+
+    //Constructor
+
+
+    public Position(String name, float price, int count, String unit) {
+        this.name = name;
+        this.price = price;
+        this.count = count;
+        this.unit = unit;
+    }
 
     //Getters and setters
     public int getId() {
@@ -33,5 +44,9 @@ public class Position {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public String getUnit() {
+        return unit;
     }
 }
