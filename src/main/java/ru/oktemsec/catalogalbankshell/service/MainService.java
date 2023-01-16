@@ -17,11 +17,7 @@ public class MainService {
     public void addCategory(String name)
     {
         Result result = categoryRepository.addCategory(new Category(name));
-        if (result.isSuccess) {
-            System.out.println(result.message);
-        } else {
-            System.err.println(result.message);
-        }
+        printResult(result);
     }
 
     public void getCatalog() {
@@ -94,16 +90,38 @@ public class MainService {
             System.out.println("Категория пуста");
         } else if(category.findPositionById(positionId) == null) {
             result.isSuccess = false;
-            result.message = "Позиция " + positionId + " не найдена";
+            result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
             printResult(result);
         }
         else {
             result = category.deletePosition(positionId);
-            if (result.isSuccess) {
-                System.out.println(result.message);
-            } else {
-                System.err.println(result.message);
-            }
+            printResult(result);
+        }
+    }
+
+    public void addPositionCount(int categoryId, int positionId, int positionCount) {
+        Result result = new Result();
+        Category category = categoryRepository.getCategory(categoryId);
+        Position position = null;
+
+        // Проверка категории
+        if (category == null) {
+            result.isSuccess = false;
+            result.message = "Категория " + categoryId + " не найдена";
+            printResult(result);
+        } else if (category.getPositions().size() == 0) {
+            System.out.println("Категория пуста");
+        } else if(category.findPositionById(positionId) == null) {
+            result.isSuccess = false;
+            result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
+            printResult(result);
+        }
+        else {
+            position = category.findPositionById(positionId);
+            position.setCount( position.getCount() + positionCount );
+            result.isSuccess = true;
+            result.message = "Количество позиции " + positionId + " успешно изменено";
+            printResult(result);
         }
     }
 
@@ -113,12 +131,13 @@ public class MainService {
             System.out.println(result.message);
         } else {
             System.err.println(result.message);
+            System.out.println();
         }
     }
 
     private void printPositions(ArrayList<Position> positions) {
         System.out.println("--------------------------------------------------------");
-        System.out.println("id\tнаименование\tколичество\tед.изм.\tстоимость");
+        System.out.println("id\tнаименование\tколичество\tстоимость");
         System.out.println("--------------------------------------------------------");
         for (Position pos : positions) {
             System.out.println(pos.getId() + "\t" + pos.getName() + "\t" + pos.getCount() + " " + pos.getUnit() + "\t" + String.format("%.2f", pos.getPrice()) + " " + Position.currency);

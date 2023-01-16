@@ -7,7 +7,9 @@ public enum EnumCommandName {
     rename_category, // OK
     get_category, // OK
     add_position, // OK
-    delete_position, // DOING
-    set_position_count,
+    delete_position, // OK
+    add_position_count, // OK
+    sub_position_count,
+    set_position_price,
     developer
 }

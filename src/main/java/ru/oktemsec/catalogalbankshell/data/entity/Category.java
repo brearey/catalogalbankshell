@@ -68,6 +68,10 @@ public class Category {
         return count;
     }
 
+    public static void setCount(int count) {
+        Category.count = count;
+    }
+
     public Position findPositionById(int id) {
         for (Position pos : positions) {
             if (pos.getId() == id) {
