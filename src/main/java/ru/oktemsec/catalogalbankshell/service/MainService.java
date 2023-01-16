@@ -73,7 +73,7 @@ public class MainService {
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
         } else {
-            System.out.println("Категория: " + category.getName() + " содержит:");
+            System.out.println("Категория " + category.getName() + " содержит:");
             printPositions(category.getPositions());
         }
     }
