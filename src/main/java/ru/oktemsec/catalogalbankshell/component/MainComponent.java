@@ -85,7 +85,7 @@ public class MainComponent {
     public void set_position_price(
             @ShellOption(arity = 1) int categoryId,
             @ShellOption(arity = 1) int positionId,
-            @ShellOption(arity = 1) int positionPrice
+            @ShellOption(arity = 1) float positionPrice
     ) {
         mainService.setPositionPrice(categoryId, positionId, positionPrice);
     }

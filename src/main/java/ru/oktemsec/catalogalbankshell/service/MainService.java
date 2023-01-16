@@ -167,7 +167,7 @@ public class MainService {
         }
     }
 
-    public void setPositionPrice(int categoryId, int positionId, int positionPrice) {
+    public void setPositionPrice(int categoryId, int positionId, float positionPrice) {
         categoryId = Math.abs(categoryId);
         positionId = Math.abs(positionId);
         positionPrice = Math.abs(positionPrice);
@@ -188,16 +188,11 @@ public class MainService {
             result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
             printResult(result);
         }
-        else if (category.findPositionById(positionId).getCount() < positionPrice) {
-            result.isSuccess = false;
-            result.message = "В категории " + categoryId +" количество позиции " + positionId + " не достаточно";
-            printResult(result);
-        }
         else {
             position = category.findPositionById(positionId);
-            position.setCount( position.getCount() - positionPrice );
+            position.setPrice( positionPrice );
             result.isSuccess = true;
-            result.message = "Количество позиции " + positionId + " успешно изменено";
+            result.message = "Стоимость позиции " + positionId + " успешно изменена";
             printResult(result);
         }
     }
@@ -213,21 +208,13 @@ public class MainService {
     }
 
     private void printPositions(ArrayList<Position> positions) {
-//        System.out.println("--------------------------------------------------------");
-//        System.out.println("id\tнаим.\tкол-во\tстоимость");
-//        System.out.println("--------------------------------------------------------");
-//        for (Position pos : positions) {
-//            System.out.println(pos.getId() + "\t" + pos.getName() + "\t" + pos.getCount() + " " + pos.getUnit() + "\t" + String.format("%.2f", pos.getPrice()) + " " + Position.currency);
-//        }
-//        System.out.println("--------------------------------------------------------");
-
         String leftAlignFormat = "| %-5d | %-20s | %-10s | %-17s |%n";
 
         System.out.format("+-------+----------------------+------------+-------------------+%n");
         System.out.format("| ID    | наименование товара  |   кол-во   |     стоимость     |%n");
         System.out.format("+-------+----------------------+------------+-------------------+%n");
         for (Position pos : positions) {
-            System.out.format(leftAlignFormat, pos.getId(), pos.getName(), pos.getCount() + " " + pos.getUnit(), pos.getPrice() + " " + Position.currency);
+            System.out.format(leftAlignFormat, pos.getId(), pos.getName(), pos.getCount() + " " + pos.getUnit(), String.format("%.2f", pos.getPrice()) + " " + Position.currency);
         }
         System.out.format("+-------+----------------------+------------+-------------------+%n");
     }

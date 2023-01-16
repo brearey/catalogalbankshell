@@ -10,6 +10,6 @@ public enum EnumCommandName {
     delete_position, // OK
     add_position_count, // OK
     sub_position_count, //OK
-    set_position_price,
+    set_position_price, //OK
     developer
 }
