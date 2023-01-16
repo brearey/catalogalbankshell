@@ -396,3 +396,20 @@
 1673861138052:set_position_price 2 1 15312.50
 1673861144102:get_category 2
 1673861192476:help
+1673861679275:quit
+1673861695074:add_category Системные блоки
+1673861695202:add_category Мониторы
+1673861695206:add_category Мыши и клавиатуры
+1673861695211:add_position 1 Corei3 шт. 8000 12
+1673861695216:add_position 1 Corei5 шт. 11000 8
+1673861695225:add_position 1 Corei7 шт. 18000 4
+1673861695229:add_position 1 Corei9 шт. 25000 2
+1673861695234:add_position 2 dell шт. 8000 5
+1673861695238:add_position 2 acer шт. 6000 4
+1673861695242:add_position 2 lg шт. 7000 3
+1673861695245:add_position 2 sony шт. 9000 0
+1673861695249:add_position 3 Logitech уп. 500 10
+1673861695254:add_position 3 Oclick уп. 400 27
+1673861695257:add_position 3 Genius уп. 300 25
+1673861695260:add_position 3 Razor уп. 1500 12
+1673861720306:get_catalog

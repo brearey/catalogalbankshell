@@ -31,9 +31,9 @@
 
 ### Для теста просто скопируйте и вставьте следующие команды в shell
 
-    add_category Системные блоки
+    add_category Компьютеры
     add_category Мониторы
-    add_category Мыши и клавиатуры
+    add_category Клавиатуры
 
 
     add_position 1 Corei3 шт. 8000 12
