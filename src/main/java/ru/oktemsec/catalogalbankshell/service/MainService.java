@@ -33,7 +33,7 @@ public class MainService {
 
     public void deleteCategory(int id)
     {
-        Result result = categoryRepository.deleteCategoryById(id);
+        Result result = categoryRepository.deleteCategoryById(Math.abs(id));
         if (result.isSuccess) {
             System.out.println(result.message);
         } else {
@@ -43,7 +43,7 @@ public class MainService {
 
     public void renameCategory(int id, String name)
     {
-        Result result = categoryRepository.renameCategoryById(id, name);
+        Result result = categoryRepository.renameCategoryById(Math.abs(id), name);
         if (result.isSuccess) {
             System.out.println(result.message);
         } else {
@@ -59,16 +59,16 @@ public class MainService {
             int positionCount
     )
     {
-        Result result = categoryRepository.addPositionToCategory(categoryId, positionName, positionUnit, positionPrice, positionCount);
+        Result result = categoryRepository.addPositionToCategory(Math.abs(categoryId), positionName, positionUnit, Math.abs(positionPrice), Math.abs(positionCount));
         printResult(result);
     }
 
     public void getCategory(int categoryId) {
         Result result = new Result();
-        Category category = categoryRepository.getCategory(categoryId);
+        Category category = categoryRepository.getCategory(Math.abs(categoryId));
         if (category == null) {
             result.isSuccess = false;
-            result.message = "Категория " + categoryId + " не найдена";
+            result.message = "Категория " + Math.abs(categoryId) + " не найдена";
             printResult(result);
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
@@ -80,27 +80,32 @@ public class MainService {
 
     public void deletePosition(int categoryId, int positionId) {
         Result result = new Result();
-        Category category = categoryRepository.getCategory(categoryId);
+        Category category = categoryRepository.getCategory(Math.abs(categoryId));
 
         // Проверка категории
         if (category == null) {
             result.isSuccess = false;
-            result.message = "Категория " + categoryId + " не найдена";
+            result.message = "Категория " + Math.abs(categoryId) + " не найдена";
             printResult(result);
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
-        } else if(category.findPositionById(positionId) == null) {
+        } else if(category.findPositionById(Math.abs(positionId)) == null) {
             result.isSuccess = false;
-            result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
+            result.message = "В категории " + Math.abs(categoryId) +" позиция " + Math.abs(positionId) + " не найдена";
             printResult(result);
         }
         else {
-            result = category.deletePosition(positionId);
+            result = category.deletePosition(Math.abs(positionId));
             printResult(result);
         }
     }
 
     public void addPositionCount(int categoryId, int positionId, int positionCount) {
+
+        categoryId = Math.abs(categoryId);
+        positionId = Math.abs(positionId);
+        positionCount = Math.abs(positionCount);
+
         Result result = new Result();
         Category category = categoryRepository.getCategory(categoryId);
         Position position = null;
@@ -127,6 +132,11 @@ public class MainService {
     }
 
     public void subPositionCount(int categoryId, int positionId, int positionCount) {
+
+        categoryId = Math.abs(categoryId);
+        positionId = Math.abs(positionId);
+        positionCount = Math.abs(positionCount);
+
         Result result = new Result();
         Category category = categoryRepository.getCategory(categoryId);
         Position position = null;
