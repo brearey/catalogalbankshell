@@ -81,6 +81,33 @@ public class MainService {
         }
     }
 
+    public void deletePosition(int categoryId, int positionId) {
+        Result result = new Result();
+        Category category = categoryRepository.getCategory(categoryId);
+
+        // Проверка категории
+        if (category == null) {
+            result.isSuccess = false;
+            result.message = "Категория " + categoryId + " не найдена";
+            printResult(result);
+        } else if (category.getPositions().size() == 0) {
+            System.out.println("Категория пуста");
+        } else if(category.findPositionById(positionId) == null) {
+            result.isSuccess = false;
+            result.message = "Позиция " + positionId + " не найдена";
+            printResult(result);
+        }
+        else {
+            result = category.deletePosition(positionId);
+            if (result.isSuccess) {
+                System.out.println(result.message);
+            } else {
+                System.err.println(result.message);
+            }
+        }
+    }
+
+    // Private methods ///////////////////////////////////////////////////////////
     private void printResult(Result result) {
         if (result.isSuccess) {
             System.out.println(result.message);

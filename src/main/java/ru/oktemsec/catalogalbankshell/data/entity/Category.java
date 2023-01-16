@@ -42,8 +42,18 @@ public class Category {
         return positions;
     }
 
-    public void deletePosition(int positionId) {
-        positions.remove(positionId);
+    public Result deletePosition(int positionId) {
+        Result result = new Result();
+        Position toDeletePosition = findPositionById(positionId);
+        try {
+            positions.remove(toDeletePosition);
+            result.isSuccess = true;
+            result.message = "Позиция " + toDeletePosition.getName() + " успешно добавлена";
+        } catch (Exception e) {
+            result.isSuccess = false;
+            result.message = e.getMessage();
+        }
+        return result;
     }
 
     public String getName() {
@@ -56,5 +66,14 @@ public class Category {
 
     public static int getCount() {
         return count;
+    }
+
+    public Position findPositionById(int id) {
+        for (Position pos : positions) {
+            if (pos.getId() == id) {
+                return pos;
+            }
+        }
+        return null;
     }
 }

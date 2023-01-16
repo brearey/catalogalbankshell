@@ -6,6 +6,8 @@ import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 import ru.oktemsec.catalogalbankshell.service.MainService;
 
+import java.io.IOException;
+
 @ShellComponent
 public class MainComponent {
 
