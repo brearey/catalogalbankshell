@@ -64,11 +64,20 @@ public class MainComponent {
 
     // Commands for one position
     @ShellMethod(key = "add_position_count", value = "Добавить количество позиции в категорию {add_position_count [ID категории] [ID позиции] [количество]}")
-    public void add_position(
+    public void add_position_count(
             @ShellOption(arity = 1) int categoryId,
             @ShellOption(arity = 1) int positionId,
             @ShellOption(arity = 1) int positionCount
     ) {
         mainService.addPositionCount(categoryId, positionId, positionCount);
+    }
+
+    @ShellMethod(key = "sub_position_count", value = "Вычесть количество позиции из категории {sub_position_count [ID категории] [ID позиции] [количество]}")
+    public void sub_position_count(
+            @ShellOption(arity = 1) int categoryId,
+            @ShellOption(arity = 1) int positionId,
+            @ShellOption(arity = 1) int positionCount
+    ) {
+        mainService.subPositionCount(categoryId, positionId, positionCount);
     }
 }

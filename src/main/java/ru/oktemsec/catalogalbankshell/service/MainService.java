@@ -73,6 +73,7 @@ public class MainService {
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
         } else {
+            System.out.println("Категория: " + category.getName() + " содержит:");
             printPositions(category.getPositions());
         }
     }
@@ -125,6 +126,37 @@ public class MainService {
         }
     }
 
+    public void subPositionCount(int categoryId, int positionId, int positionCount) {
+        Result result = new Result();
+        Category category = categoryRepository.getCategory(categoryId);
+        Position position = null;
+
+        // Проверка категории
+        if (category == null) {
+            result.isSuccess = false;
+            result.message = "Категория " + categoryId + " не найдена";
+            printResult(result);
+        } else if (category.getPositions().size() == 0) {
+            System.out.println("Категория пуста");
+        } else if(category.findPositionById(positionId) == null) {
+            result.isSuccess = false;
+            result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
+            printResult(result);
+        }
+        else if (category.findPositionById(positionId).getCount() < positionCount) {
+            result.isSuccess = false;
+            result.message = "В категории " + categoryId +" количество позиции " + positionId + " не достаточно";
+            printResult(result);
+        }
+        else {
+            position = category.findPositionById(positionId);
+            position.setCount( position.getCount() - positionCount );
+            result.isSuccess = true;
+            result.message = "Количество позиции " + positionId + " успешно изменено";
+            printResult(result);
+        }
+    }
+
     // Private methods ///////////////////////////////////////////////////////////
     private void printResult(Result result) {
         if (result.isSuccess) {
@@ -136,12 +168,22 @@ public class MainService {
     }
 
     private void printPositions(ArrayList<Position> positions) {
-        System.out.println("--------------------------------------------------------");
-        System.out.println("id\tнаименование\tколичество\tстоимость");
-        System.out.println("--------------------------------------------------------");
+//        System.out.println("--------------------------------------------------------");
+//        System.out.println("id\tнаим.\tкол-во\tстоимость");
+//        System.out.println("--------------------------------------------------------");
+//        for (Position pos : positions) {
+//            System.out.println(pos.getId() + "\t" + pos.getName() + "\t" + pos.getCount() + " " + pos.getUnit() + "\t" + String.format("%.2f", pos.getPrice()) + " " + Position.currency);
+//        }
+//        System.out.println("--------------------------------------------------------");
+
+        String leftAlignFormat = "| %-5d | %-20s | %-10s | %-17s |%n";
+
+        System.out.format("+-------+----------------------+------------+-------------------+%n");
+        System.out.format("| ID    | наименование товара  |   кол-во   |     стоимость     |%n");
+        System.out.format("+-------+----------------------+------------+-------------------+%n");
         for (Position pos : positions) {
-            System.out.println(pos.getId() + "\t" + pos.getName() + "\t" + pos.getCount() + " " + pos.getUnit() + "\t" + String.format("%.2f", pos.getPrice()) + " " + Position.currency);
+            System.out.format(leftAlignFormat, pos.getId(), pos.getName(), pos.getCount() + " " + pos.getUnit(), pos.getPrice() + " " + Position.currency);
         }
-        System.out.println("--------------------------------------------------------");
+        System.out.format("+-------+----------------------+------------+-------------------+%n");
     }
 }
