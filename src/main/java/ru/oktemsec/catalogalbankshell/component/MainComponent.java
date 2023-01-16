@@ -80,4 +80,13 @@ public class MainComponent {
     ) {
         mainService.subPositionCount(categoryId, positionId, positionCount);
     }
+
+    @ShellMethod(key = "set_position_price", value = "Задать стоимость позиции в категории {set_position_price [ID категории] [ID позиции] [стоимость]}")
+    public void set_position_price(
+            @ShellOption(arity = 1) int categoryId,
+            @ShellOption(arity = 1) int positionId,
+            @ShellOption(arity = 1) int positionPrice
+    ) {
+        mainService.setPositionPrice(categoryId, positionId, positionPrice);
+    }
 }

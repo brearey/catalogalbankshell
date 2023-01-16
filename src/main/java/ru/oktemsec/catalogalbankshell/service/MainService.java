@@ -167,6 +167,41 @@ public class MainService {
         }
     }
 
+    public void setPositionPrice(int categoryId, int positionId, int positionPrice) {
+        categoryId = Math.abs(categoryId);
+        positionId = Math.abs(positionId);
+        positionPrice = Math.abs(positionPrice);
+
+        Result result = new Result();
+        Category category = categoryRepository.getCategory(categoryId);
+        Position position = null;
+
+        // Проверка категории
+        if (category == null) {
+            result.isSuccess = false;
+            result.message = "Категория " + categoryId + " не найдена";
+            printResult(result);
+        } else if (category.getPositions().size() == 0) {
+            System.out.println("Категория пуста");
+        } else if(category.findPositionById(positionId) == null) {
+            result.isSuccess = false;
+            result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
+            printResult(result);
+        }
+        else if (category.findPositionById(positionId).getCount() < positionPrice) {
+            result.isSuccess = false;
+            result.message = "В категории " + categoryId +" количество позиции " + positionId + " не достаточно";
+            printResult(result);
+        }
+        else {
+            position = category.findPositionById(positionId);
+            position.setCount( position.getCount() - positionPrice );
+            result.isSuccess = true;
+            result.message = "Количество позиции " + positionId + " успешно изменено";
+            printResult(result);
+        }
+    }
+
     // Private methods ///////////////////////////////////////////////////////////
     private void printResult(Result result) {
         if (result.isSuccess) {
