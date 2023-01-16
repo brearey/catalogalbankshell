@@ -51,4 +51,12 @@ public class MainComponent {
     public void get_category(@ShellOption(arity = 1) int categoryId) {
         mainService.getCategory(categoryId);
     }
+
+    @ShellMethod(key = "delete_position", value = "Удалить позицию из категории {delete_position [ID категории] [ID позиции]}")
+    public void add_position(
+            @ShellOption(arity = 1) int categoryId,
+            @ShellOption(arity = 1) int positionId
+    ) {
+        mainService.deletePosition(categoryId, positionId);
+    }
 }
