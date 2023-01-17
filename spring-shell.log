@@ -536,3 +536,6 @@
 1673925253703:help echo
 1673925291908:echo --name Ев гений --surname Abramov Jarkov
 1673925557063:quit
+1673935256490:echo "Ev geniues" "Abramov Jarkov"
+1673935317671:echo "asd asd" "qwe qwe"
+1673935333806:quit

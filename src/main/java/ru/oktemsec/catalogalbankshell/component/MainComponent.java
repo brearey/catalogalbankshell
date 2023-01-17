@@ -87,11 +87,4 @@ public class MainComponent {
     ) {
         mainService.setPositionPrice(categoryId, positionId, positionPrice);
     }
-
-    //For debug-test new features
-    @ShellMethod("Display stuff.")
-    public String echo(String name, String surname) {
-        return "Hello " + name + " " + surname;
-    }
-
 }
