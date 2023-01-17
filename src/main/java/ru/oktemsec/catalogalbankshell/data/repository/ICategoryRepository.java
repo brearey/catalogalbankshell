@@ -14,13 +14,5 @@ public interface ICategoryRepository {
 
     Result renameCategoryById(int categoryId, String name);
 
-    Result addPositionToCategory(
-            int categoryId,
-            String positionName,
-            String positionUnit,
-            float positionPrice,
-            int positionCount
-    );
-
     Category getCategory(int categoryId);
 }

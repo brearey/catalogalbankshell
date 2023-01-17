@@ -451,3 +451,85 @@
 1673862185563:get_category 1
 1673862196687:get_category 2
 1673862208761:get_category 3
+1673862389306:quit
+1673923410953:add_category Компьютеры
+1673923411172:add_category Мониторы
+1673923411175:add_category Клавиатуры
+1673923411179:add_position 1 Corei3 шт. 8000 12
+1673923411186:add_position 1 Corei5 шт. 11000 8
+1673923411190:add_position 1 Corei7 шт. 18000 4
+1673923411195:add_position 1 Corei9 шт. 25000 2
+1673923411200:add_position 2 dell шт. 8000 5
+1673923411204:add_position 2 acer шт. 6000 4
+1673923411207:add_position 2 lg шт. 7000 3
+1673923411211:add_position 2 sony шт. 9000 0
+1673923411215:add_position 3 Logitech уп. 500 10
+1673923411218:add_position 3 Oclick уп. 400 27
+1673923411221:add_position 3 Genius уп. 300 25
+1673923411955:add_position 3 Razor уп. 1500 12
+1673923420024:get_catalog
+1673923427074:get_category 2
+1673923434116:get_category 3
+1673923461330:delete_category 3
+1673923468380:get_catalog 3
+1673923477464:get_category 3
+1673923494573:delete_position 2 1
+1673923574187:add_category Компьютеры
+1673923574315:add_category Мониторы
+1673923574318:add_category Клавиатуры
+1673923574322:add_position 1 Corei3 шт. 8000 12
+1673923574327:add_position 1 Corei5 шт. 11000 8
+1673923574330:add_position 1 Corei7 шт. 18000 4
+1673923574334:add_position 1 Corei9 шт. 25000 2
+1673923574338:add_position 2 dell шт. 8000 5
+1673923574342:add_position 2 acer шт. 6000 4
+1673923574346:add_position 2 lg шт. 7000 3
+1673923574349:add_position 2 sony шт. 9000 0
+1673923574353:add_position 3 Logitech уп. 500 10
+1673923574356:add_position 3 Oclick уп. 400 27
+1673923574359:add_position 3 Genius уп. 300 25
+1673923575198:add_position 3 Razor уп. 1500 12
+1673923582224:get_catalog
+1673923591269:delete_category 3
+1673923614484:delete_position 2 1
+1673923621551:get_category 2
+1673923695140:add_position_count 2 2 5
+1673923864482:get_category 2
+1673923870557:sub_position_count 2 2 1
+1673923874589:get_category 2
+1673923892753:set_position_price 2 4 9200
+1673923991208:add_category Компьютеры
+1673923991334:add_category Мониторы
+1673923991337:add_category Клавиатуры
+1673923991342:add_position 1 Corei3 шт. 8000 12
+1673923991349:add_position 1 Corei5 шт. 11000 8
+1673923991352:add_position 1 Corei7 шт. 18000 4
+1673923991356:add_position 1 Corei9 шт. 25000 2
+1673923991359:add_position 2 dell шт. 8000 5
+1673923991363:add_position 2 acer шт. 6000 4
+1673923991368:add_position 2 lg шт. 7000 3
+1673923991371:add_position 2 sony шт. 9000 0
+1673923991375:add_position 3 Logitech уп. 500 10
+1673923991378:add_position 3 Oclick уп. 400 27
+1673923991381:add_position 3 Genius уп. 300 25
+1673923991384:add_position 3 Razor уп. 1500 12
+1673924001308:get_catalog
+1673924385908:add_category Компьютеры
+1673924386037:add_category Мониторы
+1673924386041:add_category Клавиатуры
+1673924386045:add_position 1 Corei3 шт. 8000 12
+1673924386051:add_position 1 Corei5 шт. 11000 8
+1673924386055:add_position 1 Corei7 шт. 18000 4
+1673924386059:add_position 1 Corei9 шт. 25000 2
+1673924386063:add_position 2 dell шт. 8000 5
+1673924386067:add_position 2 acer шт. 6000 4
+1673924386071:add_position 2 lg шт. 7000 3
+1673924386074:add_position 2 sony шт. 9000 0
+1673924386078:add_position 3 Logitech уп. 500 10
+1673924386081:add_position 3 Oclick уп. 400 27
+1673924386084:add_position 3 Genius уп. 300 25
+1673924386905:add_position 3 Razor уп. 1500 12
+1673924390933:get_catalog
+1673924425149:get_category 1
+1673924443255:get_category 2
+1673924464358:quit

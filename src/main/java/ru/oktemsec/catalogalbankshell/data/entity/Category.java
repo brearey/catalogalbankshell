@@ -7,6 +7,8 @@ public class Category {
 
     private final int id;
     private String name;
+
+    private int positionId;
     private final ArrayList<Position> positions;
 
     static {
@@ -15,6 +17,7 @@ public class Category {
 
     public Category(String name) {
         this.name = name;
+        positionId = 0;
         count++;
         id = count;
         positions = new ArrayList<>();
@@ -24,8 +27,16 @@ public class Category {
         return id;
     }
 
-    public Result addPosition(Position position) {
+    public Result addPosition(String positionName, String positionUnit, float positionPrice, int positionCount) {
         Result result = new Result();
+        positionId++;
+        Position position = new Position(
+                this,
+                positionName,
+                positionPrice,
+                positionCount,
+                positionUnit
+        );
 
         try {
             this.positions.add(position);
@@ -48,7 +59,7 @@ public class Category {
         try {
             positions.remove(toDeletePosition);
             result.isSuccess = true;
-            result.message = "Позиция " + toDeletePosition.getName() + " успешно добавлена";
+            result.message = "Позиция " + toDeletePosition.getName() + " успешно удалена";
         } catch (Exception e) {
             result.isSuccess = false;
             result.message = e.getMessage();
@@ -79,5 +90,9 @@ public class Category {
             }
         }
         return null;
+    }
+
+    public int getPositiond() {
+        return positionId;
     }
 }

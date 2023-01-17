@@ -6,6 +6,7 @@ import ru.oktemsec.catalogalbankshell.data.entity.Category;
 import ru.oktemsec.catalogalbankshell.data.entity.Position;
 import ru.oktemsec.catalogalbankshell.data.entity.Result;
 import ru.oktemsec.catalogalbankshell.data.repository.CategoryRepositoryImpl;
+import ru.oktemsec.catalogalbankshell.util.Printer;
 
 import java.util.ArrayList;
 
@@ -17,7 +18,7 @@ public class MainService {
     public void addCategory(String name)
     {
         Result result = categoryRepository.addCategory(new Category(name));
-        printResult(result);
+        Printer.printResult(result);
     }
 
     public void getCatalog() {
@@ -25,9 +26,7 @@ public class MainService {
         if (categories.size() == 0) {
             System.out.println("Каталог пуст");
         } else {
-            for (Category cat : categories) {
-                System.out.println(cat.getId() + " " + cat.getName());
-            }
+            Printer.printCatalog(categories);
         }
     }
 
@@ -59,8 +58,9 @@ public class MainService {
             int positionCount
     )
     {
-        Result result = categoryRepository.addPositionToCategory(Math.abs(categoryId), positionName, positionUnit, Math.abs(positionPrice), Math.abs(positionCount));
-        printResult(result);
+        Category category = catalog.findCategoryById(categoryId);
+        Result result = category.addPosition(positionName, positionUnit, Math.abs(positionPrice), Math.abs(positionCount));
+        Printer.printResult(result);
     }
 
     public void getCategory(int categoryId) {
@@ -69,12 +69,12 @@ public class MainService {
         if (category == null) {
             result.isSuccess = false;
             result.message = "Категория " + Math.abs(categoryId) + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
         } else {
             System.out.println("Категория " + category.getName() + " содержит:");
-            printPositions(category.getPositions());
+            Printer.printPositions(category.getPositions());
         }
     }
 
@@ -86,17 +86,17 @@ public class MainService {
         if (category == null) {
             result.isSuccess = false;
             result.message = "Категория " + Math.abs(categoryId) + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
         } else if(category.findPositionById(Math.abs(positionId)) == null) {
             result.isSuccess = false;
             result.message = "В категории " + Math.abs(categoryId) +" позиция " + Math.abs(positionId) + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         }
         else {
             result = category.deletePosition(Math.abs(positionId));
-            printResult(result);
+            Printer.printResult(result);
         }
     }
 
@@ -114,20 +114,20 @@ public class MainService {
         if (category == null) {
             result.isSuccess = false;
             result.message = "Категория " + categoryId + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
         } else if(category.findPositionById(positionId) == null) {
             result.isSuccess = false;
             result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         }
         else {
             position = category.findPositionById(positionId);
             position.setCount( position.getCount() + positionCount );
             result.isSuccess = true;
-            result.message = "Количество позиции " + positionId + " успешно изменено";
-            printResult(result);
+            result.message = "Количество позиции " + position.getName() + " успешно изменено";
+            Printer.printResult(result);
         }
     }
 
@@ -145,25 +145,25 @@ public class MainService {
         if (category == null) {
             result.isSuccess = false;
             result.message = "Категория " + categoryId + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
         } else if(category.findPositionById(positionId) == null) {
             result.isSuccess = false;
             result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         }
         else if (category.findPositionById(positionId).getCount() < positionCount) {
             result.isSuccess = false;
-            result.message = "В категории " + categoryId +" количество позиции " + positionId + " не достаточно";
-            printResult(result);
+            result.message = "В категории " + categoryId +" количество позиции " + category.findPositionById(positionId) + " не достаточно";
+            Printer.printResult(result);
         }
         else {
             position = category.findPositionById(positionId);
             position.setCount( position.getCount() - positionCount );
             result.isSuccess = true;
-            result.message = "Количество позиции " + positionId + " успешно изменено";
-            printResult(result);
+            result.message = "Количество позиции " + position.getName() + " успешно изменено";
+            Printer.printResult(result);
         }
     }
 
@@ -176,46 +176,24 @@ public class MainService {
         Category category = categoryRepository.getCategory(categoryId);
         Position position = null;
 
-        // Проверка категории
+        // Проверка категории на exist и пустоту
         if (category == null) {
             result.isSuccess = false;
             result.message = "Категория " + categoryId + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         } else if (category.getPositions().size() == 0) {
             System.out.println("Категория пуста");
         } else if(category.findPositionById(positionId) == null) {
             result.isSuccess = false;
             result.message = "В категории " + categoryId +" позиция " + positionId + " не найдена";
-            printResult(result);
+            Printer.printResult(result);
         }
         else {
             position = category.findPositionById(positionId);
             position.setPrice( positionPrice );
             result.isSuccess = true;
-            result.message = "Стоимость позиции " + positionId + " успешно изменена";
-            printResult(result);
+            result.message = "Стоимость позиции " + position.getName() + " успешно изменена";
+            Printer.printResult(result);
         }
-    }
-
-    // Private methods ///////////////////////////////////////////////////////////
-    private void printResult(Result result) {
-        if (result.isSuccess) {
-            System.out.println(result.message);
-        } else {
-            System.err.println(result.message);
-            System.out.println();
-        }
-    }
-
-    private void printPositions(ArrayList<Position> positions) {
-        String leftAlignFormat = "| %-5d | %-20s | %-10s | %-17s |%n";
-
-        System.out.format("+-------+----------------------+------------+-------------------+%n");
-        System.out.format("| ID    | наименование товара  |   кол-во   |     стоимость     |%n");
-        System.out.format("+-------+----------------------+------------+-------------------+%n");
-        for (Position pos : positions) {
-            System.out.format(leftAlignFormat, pos.getId(), pos.getName(), pos.getCount() + " " + pos.getUnit(), String.format("%.2f", pos.getPrice()) + " " + Position.currency);
-        }
-        System.out.format("+-------+----------------------+------------+-------------------+%n");
     }
 }

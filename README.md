@@ -42,10 +42,10 @@
     add_position 1 Corei9 шт. 25000 2
 
 
-    add_position 2 dell шт. 8000 5
-    add_position 2 acer шт. 6000 4
-    add_position 2 lg шт. 7000 3
-    add_position 2 sony шт. 9000 0
+    add_position 2 Dell шт. 8000 5
+    add_position 2 Acer шт. 6000 4
+    add_position 2 LG шт. 7000 3
+    add_position 2 Sony шт. 9000 0
 
 
     add_position 3 Logitech уп. 500 10
