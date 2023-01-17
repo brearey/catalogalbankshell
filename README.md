@@ -39,22 +39,24 @@
     add_category "Клавиатуры и мыши"
 
 
-    add_position 1 Corei3 шт. 8000 12
-    add_position 1 Corei5 шт. 11000 8
-    add_position 1 Corei7 шт. 18000 4
-    add_position 1 Corei9 шт. 25000 2
+    add_position 1 Corei3 шт. 8000.00 12
+    add_position 1 Corei5 шт. 11000.00 8
+    add_position 1 Corei7 шт. 18000.00 4
 
 
-    add_position 2 Dell шт. 8000 5
-    add_position 2 Acer шт. 6000 4
-    add_position 2 LG шт. 7000 3
-    add_position 2 Sony шт. 9000 0
+    add_position 2 Dell шт. 8000.00 5
+    add_position 2 Acer шт. 6000.00 4
+    add_position 2 LG шт. 7000.00 3
+    add_position 2 Sony шт. 9000.00 0
+    add_position 2 Apple шт. 49990.50 0
 
 
-    add_position 3 Logitech уп. 500 10
-    add_position 3 Oclick уп. 400 27
-    add_position 3 Genius уп. 300 25
-    add_position 3 Razor уп. 1500 12
+    add_position 3 Logitech уп. 1500.00 10
+    add_position 3 Oclick уп. 1400.50 27
+    add_position 3 Genius уп. 1300.50 25
+    add_position 3 Razor уп. 3500.00 12
+    add_position 3 Aceline уп. 799.50 32
+    add_position 3 DEXP уп. 1250.50 24
 
 ### Если в консоли крякозабры
 [Stackoverflow в помощь](https://ru.stackoverflow.com/questions/1258031/%D0%9D%D0%B5-%D0%BE%D1%82%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B0%D0%B5%D1%82%D1%81%D1%8F-%D0%BA%D0%B8%D1%80%D0%B8%D0%BB%D0%B8%D1%86%D0%B0-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8)

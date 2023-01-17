@@ -539,3 +539,19 @@
 1673935256490:echo "Ev geniues" "Abramov Jarkov"
 1673935317671:echo "asd asd" "qwe qwe"
 1673935333806:quit
+1673936137777:add_category Компьютеры
+1673936137915:add_category Мониторы
+1673936137921:add_category "Клавиатуры и мыши"
+1673936137925:add_position 1 Corei3 шт. 8000 12
+1673936137931:add_position 1 Corei5 шт. 11000 8
+1673936137935:add_position 1 Corei7 шт. 18000 4
+1673936137940:add_position 1 Corei9 шт. 25000 2
+1673936137944:add_position 2 Dell шт. 8000 5
+1673936137948:add_position 2 Acer шт. 6000 4
+1673936137951:add_position 2 LG шт. 7000 3
+1673936137954:add_position 2 Sony шт. 9000 0
+1673936137958:add_position 3 Logitech уп. 500 10
+1673936137961:add_position 3 Oclick уп. 400 27
+1673936137965:add_position 3 Genius уп. 300 25
+1673936138776:add_position 3 Razor уп. 1500 12
+1673936144843:get_catalog
