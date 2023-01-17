@@ -11,7 +11,5 @@ public enum EnumCommandName {
     add_position_count, // OK
     sub_position_count, //OK
     set_position_price, //OK
-
-    // TODO: fix positions ID: static is bad
-    developer
+    developer //OK
 }
