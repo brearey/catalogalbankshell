@@ -533,3 +533,6 @@
 1673924425149:get_category 1
 1673924443255:get_category 2
 1673924464358:quit
+1673925253703:help echo
+1673925291908:echo --name Ев гений --surname Abramov Jarkov
+1673925557063:quit

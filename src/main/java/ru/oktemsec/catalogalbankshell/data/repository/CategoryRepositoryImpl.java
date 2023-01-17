@@ -2,7 +2,6 @@ package ru.oktemsec.catalogalbankshell.data.repository;
 
 import ru.oktemsec.catalogalbankshell.data.entity.Catalog;
 import ru.oktemsec.catalogalbankshell.data.entity.Category;
-import ru.oktemsec.catalogalbankshell.data.entity.Position;
 import ru.oktemsec.catalogalbankshell.data.entity.Result;
 
 import java.util.ArrayList;
