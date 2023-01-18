@@ -13,7 +13,6 @@ public class Printer {
             System.out.println(result.message);
         } else {
             System.err.println(result.message);
-            System.out.println();
         }
     }
     public static void printPositions(ArrayList<Position> positions) {

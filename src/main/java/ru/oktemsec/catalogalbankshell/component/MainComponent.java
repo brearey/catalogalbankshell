@@ -88,6 +88,11 @@ public class MainComponent {
         mainService.setPositionPrice(categoryId, positionId, positionPrice);
     }
 
+    @ShellMethod(key = "export_demo", value = "Экспорт команд для демонстрационного приложения {export_demo}")
+    public void export_demo() {
+        mainService.exportDemo();
+    }
+
     @ShellMethod(key = "developer", value = "Пасхалка {developer}")
     public String developer() {
         return "Разработчик: Абрамов Евгений Семенович\ntel: 89246628934\nemail: brearey4@gmail.com";

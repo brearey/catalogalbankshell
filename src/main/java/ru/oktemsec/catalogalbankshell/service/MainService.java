@@ -6,6 +6,7 @@ import ru.oktemsec.catalogalbankshell.data.entity.Category;
 import ru.oktemsec.catalogalbankshell.data.entity.Position;
 import ru.oktemsec.catalogalbankshell.data.entity.Result;
 import ru.oktemsec.catalogalbankshell.data.repository.CategoryRepositoryImpl;
+import ru.oktemsec.catalogalbankshell.util.FileExporter;
 import ru.oktemsec.catalogalbankshell.util.Printer;
 
 import java.util.ArrayList;
@@ -74,7 +75,16 @@ public class MainService {
             System.out.println("Категория пуста");
         } else {
             System.out.println("Категория " + category.getName() + " содержит:");
-            Printer.printPositions(category.getPositions());
+
+            // Вывод позиций с не нулевым количеством
+            ArrayList<Position> _positions = new ArrayList<>();
+            for (Position pos : category.getPositions()) {
+                if (pos.getCount() != 0) {
+                    _positions.add(pos);
+                }
+            }
+
+            Printer.printPositions(_positions);
         }
     }
 
@@ -195,5 +205,34 @@ public class MainService {
             result.message = "Стоимость позиции " + position.getName() + " успешно изменена";
             Printer.printResult(result);
         }
+    }
+
+    public void exportDemo() {
+        String demoCommands = "add_category Компьютеры\n" +
+                "add_category Мониторы\n" +
+                "add_category \"Клавиатуры и мыши\"\n" +
+                "\n" +
+                "\n" +
+                "add_position 1 Corei3 шт. 8000.00 12\n" +
+                "add_position 1 Corei5 шт. 11000.00 8\n" +
+                "add_position 1 Corei7 шт. 18000.00 4\n" +
+                "\n" +
+                "\n" +
+                "add_position 2 Dell шт. 8000.00 5\n" +
+                "add_position 2 Acer шт. 6000.00 4\n" +
+                "add_position 2 LG шт. 7000.00 3\n" +
+                "add_position 2 Sony шт. 9000.00 0\n" +
+                "add_position 2 Apple шт. 49990.50 0\n" +
+                "\n" +
+                "\n" +
+                "add_position 3 Logitech уп. 1500.00 10\n" +
+                "add_position 3 Oclick уп. 1400.50 27\n" +
+                "add_position 3 Genius уп. 1300.50 25\n" +
+                "add_position 3 Razor уп. 3500.00 12\n" +
+                "add_position 3 Aceline уп. 799.50 32\n" +
+                "add_position 3 DEXP уп. 1250.50 24";
+
+        String test = "test";
+        Printer.printResult(FileExporter.export("demo", demoCommands));
     }
 }

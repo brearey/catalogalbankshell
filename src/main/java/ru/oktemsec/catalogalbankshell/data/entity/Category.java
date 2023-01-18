@@ -29,6 +29,16 @@ public class Category {
 
     public Result addPosition(String positionName, String positionUnit, float positionPrice, int positionCount) {
         Result result = new Result();
+
+        // Ошибка добавления существующей позиции
+        for (Position pos : this.getPositions()) {
+            if (pos.getName().equalsIgnoreCase(positionName)) {
+                result.isSuccess = false;
+                result.message = "Ошибка добавления. Позиция с именем " + positionName + " уже существует";
+                return result;
+            }
+        }
+
         positionId++;
         Position position = new Position(
                 this,

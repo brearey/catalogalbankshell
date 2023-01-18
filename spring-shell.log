@@ -580,3 +580,97 @@
 1673936742726:quit
 1673936756385:developer
 1673936937544:quit
+1674006409007:add_category Компьютеры
+1674006409287:add_category Мониторы
+1674006409293:add_category "Клавиатуры и мыши"
+1674006409298:add_position 1 Corei3 шт. 8000.00 12
+1674006409305:add_position 1 Corei5 шт. 11000.00 8
+1674006409309:add_position 1 Corei7 шт. 18000.00 4
+1674006409313:add_position 2 Dell шт. 8000.00 5
+1674006409317:add_position 2 Acer шт. 6000.00 4
+1674006409321:add_position 2 LG шт. 7000.00 3
+1674006409325:add_position 2 Sony шт. 9000.00 0
+1674006409329:add_position 2 Apple шт. 49990.50 0
+1674006409333:add_position 3 Logitech уп. 1500.00 10
+1674006409339:add_position 3 Oclick уп. 1400.50 27
+1674006409342:add_position 3 Genius уп. 1300.50 25
+1674006409345:add_position 3 Razor уп. 3500.00 12
+1674006409347:add_position 3 Aceline уп. 799.50 32
+1674006409997:add_position 3 DEXP уп. 1250.50 24
+1674006414028:get_catalog
+1674006420085:get_category 1
+1674006442186:add_position 1 Corei3 шт. 8000.00 12
+1674006462331:add_category Компьютеры
+1674006484447:get_catalog
+1674006491511:get_category 1
+1674006495548:quit
+1674006698973:add_category Компьютеры
+1674006699099:add_category Мониторы
+1674006699103:add_category "Клавиатуры и мыши"
+1674006699108:add_position 1 Corei3 шт. 8000.00 12
+1674006699114:add_position 1 Corei5 шт. 11000.00 8
+1674006699117:add_position 1 Corei7 шт. 18000.00 4
+1674006699121:add_position 2 Dell шт. 8000.00 5
+1674006699124:add_position 2 Acer шт. 6000.00 4
+1674006699129:add_position 2 LG шт. 7000.00 3
+1674006699132:add_position 2 Sony шт. 9000.00 0
+1674006699136:add_position 2 Apple шт. 49990.50 0
+1674006699140:add_position 3 Logitech уп. 1500.00 10
+1674006699145:add_position 3 Oclick уп. 1400.50 27
+1674006699148:add_position 3 Genius уп. 1300.50 25
+1674006699151:add_position 3 Razor уп. 3500.00 12
+1674006699154:add_position 3 Aceline уп. 799.50 32
+1674006699157:add_position 3 DEXP уп. 1250.50 24
+1674006716112:get_catalog
+1674006734236:add_category "бла бла"
+1674006739280:get_catalog
+1674006756415:add_position 4 Corei7 шт. 18000.00 4
+1674006762448:get_catalog
+1674006769505:quit
+1674006954654:add_category Компьютеры
+1674006954775:add_category Мониторы
+1674006954779:add_category "Клавиатуры и мыши"
+1674006954784:add_position 1 Corei3 шт. 8000.00 12
+1674006954790:add_position 1 Corei5 шт. 11000.00 8
+1674006954794:add_position 1 Corei7 шт. 18000.00 4
+1674006954798:add_position 2 Dell шт. 8000.00 5
+1674006954801:add_position 2 Acer шт. 6000.00 4
+1674006954805:add_position 2 LG шт. 7000.00 3
+1674006954809:add_position 2 Sony шт. 9000.00 0
+1674006954812:add_position 2 Apple шт. 49990.50 0
+1674006954815:add_position 3 Logitech уп. 1500.00 10
+1674006954818:add_position 3 Oclick уп. 1400.50 27
+1674006954820:add_position 3 Genius уп. 1300.50 25
+1674006954823:add_position 3 Razor уп. 3500.00 12
+1674006954826:add_position 3 Aceline уп. 799.50 32
+1674006955652:add_position 3 DEXP уп. 1250.50 24
+1674006961698:get_catalog
+1674006969758:add_position 1 Corei3 шт. 8000.00 12
+1674007059448:add_position 2 Corei3 шт. 8000.00 12
+1674007067509:get_category 2
+1674007337224:quit
+1674007709047:add_category Компьютеры
+1674007709186:add_category Мониторы
+1674007709190:add_category "Клавиатуры и мыши"
+1674007709195:add_position 1 Corei3 шт. 8000.00 12
+1674007709201:add_position 1 Corei5 шт. 11000.00 8
+1674007709206:add_position 1 Corei7 шт. 18000.00 4
+1674007709210:add_position 2 Dell шт. 8000.00 5
+1674007709214:add_position 2 Acer шт. 6000.00 4
+1674007709219:add_position 2 LG шт. 7000.00 3
+1674007709223:add_position 2 Sony шт. 9000.00 0
+1674007709228:add_position 2 Apple шт. 49990.50 0
+1674007709233:add_position 3 Logitech уп. 1500.00 10
+1674007709237:add_position 3 Oclick уп. 1400.50 27
+1674007709241:add_position 3 Genius уп. 1300.50 25
+1674007709244:add_position 3 Razor уп. 3500.00 12
+1674007709247:add_position 3 Aceline уп. 799.50 32
+1674007710042:add_position 3 DEXP уп. 1250.50 24
+1674007714061:get_catalog
+1674007721116:get_category 3
+1674007728173:get_category 2
+1674012734574:quit
+1674012751158:export_demo
+1674013496922:quit
+1674013507662:export_demo
+1674013570203:quit

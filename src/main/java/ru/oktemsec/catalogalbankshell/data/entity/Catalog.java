@@ -18,6 +18,14 @@ public class Catalog {
     public Result addCategory(Category category) {
         Result result = new Result();
 
+        for (Category cat : categories) {
+            if (category.getName().equalsIgnoreCase(cat.getName())) {
+                result.isSuccess = false;
+                result.message = "Ошибка добавления. Категория с именем " + cat.getName() + " уже существует";
+                return result;
+            }
+        }
+
         try {
             this.categories.add(category);
             result.isSuccess = true;
@@ -75,7 +83,14 @@ public class Catalog {
     }
 
     public ArrayList<Category> getCategories() {
-        return this.categories;
+        //Вернуть не пустые категории
+        ArrayList<Category> _categories = new ArrayList<>();
+        for(Category cat: categories) {
+            if (cat.getPositions().size() > 0) {
+                _categories.add(cat);
+            }
+        }
+        return _categories;
     }
 
     public Category findCategoryById(int id) {
